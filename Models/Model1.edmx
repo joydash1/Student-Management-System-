@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TeachersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_Course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="HeadOfDepartment" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeptHPhone" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Student">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="RegistrationNo" Type="int" Nullable="false" />
+          <Property Name="Session" Type="int" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Course" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_teacher">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeacherID" Type="int" Nullable="false" />
+          <Property Name="TeacherName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="DateOfJoin" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeachersModelStoreContainer">
+          <EntitySet Name="tbl_Course" EntityType="Self.tbl_Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Department" EntityType="Self.tbl_Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Student" EntityType="Self.tbl_Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_teacher" EntityType="Self.tbl_teacher" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeachersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_Course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HeadOfDepartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DeptHPhone" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Student">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="RegistrationNo" Type="Int32" Nullable="false" />
+          <Property Name="Session" Type="Int32" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Course" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_teacher">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeacherID" Type="Int32" Nullable="false" />
+          <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="DateOfJoin" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeachersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Course" EntityType="Self.tbl_Course" />
+          <EntitySet Name="tbl_Department" EntityType="Self.tbl_Department" />
+          <EntitySet Name="tbl_Student" EntityType="Self.tbl_Student" />
+          <EntitySet Name="tbl_teacher" EntityType="Self.tbl_teacher" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeachersModelStoreContainer" CdmEntityContainer="TeachersEntities">
+          <EntitySetMapping Name="tbl_Course">
+            <EntityTypeMapping TypeName="TeachersModel.tbl_Course">
+              <MappingFragment StoreEntitySet="tbl_Course">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Department">
+            <EntityTypeMapping TypeName="TeachersModel.tbl_Department">
+              <MappingFragment StoreEntitySet="tbl_Department">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="HeadOfDepartment" ColumnName="HeadOfDepartment" />
+                <ScalarProperty Name="DeptHPhone" ColumnName="DeptHPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Student">
+            <EntityTypeMapping TypeName="TeachersModel.tbl_Student">
+              <MappingFragment StoreEntitySet="tbl_Student">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_teacher">
+            <EntityTypeMapping TypeName="TeachersModel.tbl_teacher">
+              <MappingFragment StoreEntitySet="tbl_teacher">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="DateOfJoin" ColumnName="DateOfJoin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
